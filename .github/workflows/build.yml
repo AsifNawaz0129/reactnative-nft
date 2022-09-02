@@ -14,19 +14,22 @@ jobs:
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v3.0.0
-      - uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: install # will run `yarn install` command
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-      - name: Make gradlew executable
-        run: |
-          pwd
-          ls
-          cd android && chmod +x ./gradlew
-      - name: Run build with Gradle wrapper
-        run: |
-          pwd
-          ls
-          cd android && ./gradlew clean
+      # - name: Setup Gradle
+      #   uses: gradle/gradle-build-action@v2
+      # - name: Make gradlew executable
+      #   run: |
+      #     pwd
+      #     ls
+      #     cd android && chmod +x ./gradlew
+      # - name: Run build with Gradle wrapper
+      #   run: |
+      #     pwd
+      #     ls
+      #     cd android && ./gradlew clean
+      - uses: actions/setup-java@v1
+      with:
+        java-version: 11
+      - name: Make Gradle executable
+        run: cd android && chmod +x ./gradlew
+      - name: Build Release APK
+        run: cd android && ./gradlew assembleRelease
