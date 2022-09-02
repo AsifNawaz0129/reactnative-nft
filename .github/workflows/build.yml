@@ -27,8 +27,8 @@ jobs:
       #     ls
       #     cd android && ./gradlew clean
       - uses: actions/setup-java@v1
-      with:
-        java-version: 11
+        with:
+          java-version: 11
       - name: Make Gradle executable
         run: cd android && chmod +x ./gradlew
       - name: Build Release APK
