@@ -19,10 +19,10 @@ jobs:
       - name: Make gradlew executable
         run: |
           pwd
+          ls
           cd android && chmod +x ./gradlew
-          pwd
       - name: Run build with Gradle wrapper
         run: |
           pwd
-          cd android && chmod +x ./gradlew
+          ls
           cd android && ./gradlew build --scan
