@@ -17,4 +17,4 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       - name: Run build with Gradle wrapper
-        run: ./gradlew build --scan
+        run: cd android && ./gradlew build --scan
