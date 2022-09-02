@@ -16,5 +16,13 @@ jobs:
           cmd: install # will run `yarn install` command
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
+      - name: Make gradlew executable
+        run: |
+          pwd
+          cd android && chmod +x ./gradlew
+          pwd
       - name: Run build with Gradle wrapper
-        run: cd android && ./gradlew build --scan
+        run:: |
+          pwd
+          cd android && chmod +x ./gradlew
+          cd android && ./gradlew build --scan
