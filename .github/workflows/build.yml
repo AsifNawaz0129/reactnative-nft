@@ -23,4 +23,4 @@ jobs:
       # - name: Build with Gradle
       #   run: ./gradlew build
       - name: Build Debug APK
-        run: ./gradlew release
+        run: ./gradlew assemblerelease
